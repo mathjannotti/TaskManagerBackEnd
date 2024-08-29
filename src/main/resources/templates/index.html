@@ -1,11 +1,49 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Task Manager</title>
+    <meta charset="UTF-8">
+    <title>Gerenciador de Tarefas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #4a90e2;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            padding: 10px 20px;
+            color: white;
+            background-color: #4a90e2;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: #357ab8;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to the Task Manager</h1>
-    <p>Gerencie suas tarefas.</p>
-    <a href="/tasks">Go to Task List</a>
+    <h1>Gerenciador de Tarefas</h1>
+    <p>Bem-vindo ao Gerenciador de Tarefas!</p>
+    <a th:href="@{/tasks}">Ir para o Gerenciador</a>
 </body>
 </html>

@@ -1,30 +1,81 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Edit Task</title>
+    <title>Edite uma Tarefa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        h1 {
+            color: #4a90e2;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+        }
+
+        input, textarea, select {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        button {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #357ab8;
+        }
+
+        a {
+            margin-top: 10px;
+            text-decoration: none;
+            color: #4a90e2;
+        }
+    </style>
 </head>
 <body>
-<h1>Edit Task</h1>
-<form action="/tasks/edit" method="post" th:object="${task}">
-    <input type="hidden" th:field="*{id}">
-    <label for="name">Name:</label>
-    <input type="text" id="name" th:field="*{name}" required>
-    <br>
-    <label for="responsible">Responsible:</label>
-    <input type="text" id="responsible" th:field="*{responsible}" required>
-    <br>
-    <label for="description">Description:</label>
-    <textarea id="description" th:field="*{description}"></textarea>
-    <br>
-    <label for="status">Status:</label>
-    <select id="status" th:field="*{status}">
-        <option value="TODO">TODO</option>
-        <option value="DOING">DOING</option>
-        <option value="DONE">DONE</option>
-    </select>
-    <br>
-    <button type="submit">Save</button>
-</form>
-<a href="/tasks">Back to list</a>
+    <h1>Edite Tarefa</h1>
+    <form action="/tasks/edit" method="post" th:object="${task}">
+        <input type="hidden" th:field="*{id}">
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" th:field="*{name}" required>
+
+        <label for="responsible">Responsible:</label>
+        <input type="text" id="responsible" th:field="*{responsible}" required>
+
+        <label for="description">Description:</label>
+        <textarea id="description" th:field="*{description}"></textarea>
+
+        <label for="status">Status:</label>
+        <select id="status" th:field="*{status}">
+            <option value="TODO">TODO</option>
+            <option value="DOING">DOING</option>
+            <option value="DONE">DONE</option>
+        </select>
+
+        <button type="submit">Salvar Mudanças</button>
+    </form>
+    <a href="/tasks">Voltar para a Lista de Tarefas</a>
 </body>
 </html>

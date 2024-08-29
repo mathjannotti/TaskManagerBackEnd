@@ -1,29 +1,79 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Create Task</title>
+    <title>Criar Tarefa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        h1 {
+            color: #4a90e2;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+        }
+
+        input, textarea, select {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        button {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #357ab8;
+        }
+
+        a {
+            margin-top: 10px;
+            text-decoration: none;
+            color: #4a90e2;
+        }
+    </style>
 </head>
 <body>
-<h1>Create Task</h1>
-<form action="/tasks/create" method="post">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
-    <br>
-    <label for="responsible">Responsible:</label>
-    <input type="text" id="responsible" name="responsible" required>
-    <br>
-    <label for="description">Description:</label>
-    <textarea id="description" name="description"></textarea>
-    <br>
-    <label for="status">Status:</label>
-    <select id="status" name="status">
-        <option value="TODO">TODO</option>
-        <option value="DOING">DOING</option>
-        <option value="DONE">DONE</option>
-    </select>
-    <br>
-    <button type="submit">Create</button>
-</form>
-<a href="/tasks">Back to list</a>
+    <h1>Criar Tarefa</h1>
+    <form action="/tasks/create" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="responsible">Responsible:</label>
+        <input type="text" id="responsible" name="responsible" required>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description"></textarea>
+
+        <label for="status">Status:</label>
+        <select id="status" name="status">
+            <option value="TODO">TODO</option>
+            <option value="DOING">DOING</option>
+            <option value="DONE">DONE</option>
+        </select>
+
+        <button type="submit">Criar</button>
+    </form>
+    <a href="/tasks">Voltar para a Lista de Trefas</a>
 </body>
 </html>
