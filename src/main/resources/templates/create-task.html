@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create Task</title>
+</head>
+<body>
+<h1>Create Task</h1>
+<form action="/tasks/create" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <br>
+    <label for="responsible">Responsible:</label>
+    <input type="text" id="responsible" name="responsible" required>
+    <br>
+    <label for="description">Description:</label>
+    <textarea id="description" name="description"></textarea>
+    <br>
+    <label for="status">Status:</label>
+    <select id="status" name="status">
+        <option value="TODO">TODO</option>
+        <option value="DOING">DOING</option>
+        <option value="DONE">DONE</option>
+    </select>
+    <br>
+    <button type="submit">Create</button>
+</form>
+<a href="/tasks">Back to list</a>
+</body>
+</html>
